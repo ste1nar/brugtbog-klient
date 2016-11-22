@@ -1,38 +1,29 @@
-/**
- * Created by STE1NAR on 04-11-2016.
- */
 
-$(document).ready(function() {
+    function getBooks () {
 
-    var $booksTableBody = $("#booksTableBody")
+        $.ajax({
+            url:"https://localhost:8000/getbooks",
+            method: "GET",
+            dataType: "json",
 
-    $.ajax({
-        url:"https://momentify.eu.ngrok.io/api/books",
-        method: "GET",
-        dataType: "json",
-        contentType: "applications/json",
+            success: function(data) {
 
-        success: function(books, status, xhr) {
+                $("#tblBooks").dataTable({
+                   data: data,
+                    processing: true,
+                    bDestroy: true,
+                    columns: [
+                        { data: "title" },
+                        { data: "edition" },
+                        { data: "author" },
+                        { data: "isbn" }
+                    ]
+                });
 
-              books.forEach(function(book) {
-
-            $booksTableBody.append(
-                "<tr>" +
-                "<td>" +  console.log("hey")</td>" +
-                "<td>" + "</td>" +
-                "<td>" + "</td>" +
-                "<td>" +  "</td>" +
-                "<td>" + "</td>" +
-                "</tr>"
-            );
-
-        });
-
-    },
-    error: function(xhr, status, error) {
-        console.log(xhr, status, error);
-    },
-});
-
-
-});
+            },
+            error: function(data) {
+                alert(JSON.stringify(data));
+                alert("Hov! Noget gik galt! :O");
+            }
+        })
+    }
