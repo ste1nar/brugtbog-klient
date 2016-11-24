@@ -21,5 +21,4 @@ function createBook() {
         success: function (data) { alert("Book created"); alert(JSON.stringify(data))},
         error: function (data) { alert("Error"); alert(JSON.stringify(data))}
     })
-
 }

@@ -16,7 +16,8 @@
                         { data: "title" },
                         { data: "edition" },
                         { data: "author" },
-                        { data: "isbn" }
+                        { data: "isbn" },
+                        { defaultContent: "<button type='button'>Slet</button>" }
                     ]
                 });
 
@@ -27,3 +28,4 @@
             }
         })
     }
+

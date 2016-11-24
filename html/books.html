@@ -46,6 +46,7 @@
             <th>Edition</th>
             <th>Author</th>
             <th>ISBN</th>
+            <th>Delete</th>
         </thead>
     </table>
 
@@ -61,7 +62,14 @@
 <script type="text/javascript">
     $(document).ready(function() {
         getBooks();
+
+        $('#tblBooks').on( 'click', 'button', function () {
+            var data = $('#tblBooks').DataTable().row( $(this).parents('tr') ).data();
+            $('#tblBooks').DataTable().row( $(this).parents('tr') ).remove().draw();
+            alert("Bogen: " + data["title"] +" med ISBN: "+ data[ "isbn" ] + " er slettet." );
+        } );
     });
+
 </script>
 
 </body>
