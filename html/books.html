@@ -65,9 +65,11 @@
 
         $('#tblBooks').on( 'click', 'button', function () {
             var data = $('#tblBooks').DataTable().row( $(this).parents('tr') ).data();
-            $('#tblBooks').DataTable().row( $(this).parents('tr') ).remove().draw();
-            alert("Bogen: " + data["title"] +" med ISBN: "+ data[ "isbn" ] + " er slettet." );
+            deleteBook(this,data);
         } );
+
+
+
     });
 
 </script>

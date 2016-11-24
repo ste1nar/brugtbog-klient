@@ -24,8 +24,26 @@
             },
             error: function(data) {
                 alert(JSON.stringify(data));
-                alert("Hov! Noget gik galt! :O");
             }
         })
     }
+    
+    function deleteBook (row, book) {
+    $.ajax({
+            url: "https://localhost:8000/deletebook",
+            type: 'POST',
+            dataType: "json",
+            xhrFields: {withCredentials: true},
+            data: JSON.stringify({
+                "isbn" : book.isbn
+            }),
 
+            success: function (data) {
+                $('#tblBooks').DataTable().row( $(row).parents('tr') ).remove().draw();
+                alert("Bogen: " + book.title +" med ISBN: "+ book.isbn + " er slettet." );
+            },
+            error: function(data) {
+                alert(JSON.stringify(data));
+            }
+    })
+    }
