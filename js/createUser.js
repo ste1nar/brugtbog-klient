@@ -27,7 +27,11 @@ function createUser() {
             "cash": cash
         }),
 
-        success: function (data) { alert("User created"); alert(JSON.stringify(data))},
+        success: function (data) {
+            alert("User created");
+            alert(JSON.stringify(data));
+            window.location.href = "users.html";
+        },
         error: function (data) { alert("Error"); alert(JSON.stringify(data))}
     })
 
