@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Brugtbogsbørs</title>
+
+    <link rel="stylesheet" href="../lib/css/bootstrap.css">
+    <link rel="stylesheet" href="../lib/css/dataTables.bootstrap.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="userView.html">Brugtbogsbørs</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li><a href="userBooks.html">Bøger</a></li>
+                    <li><a href="userAds.html">Annoncer</a></li>
+                    <li><a href="myAds.html">Mine annoncer</a></li>
+                    <li><a href="createAd.html">Opret ny annonce</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="myProfile.html">Min profil</a></li>
+                    <li><a href="logout.html">Log ud</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h2>Min profil</h2>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">*USERNAME*</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="../lib/no-user-image.gif"> </div>
+
+                <div class=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                            <td>Brugernavn:</td>
+                            <td><script id="test" >"username"</script></td>
+                        </tr>
+                        <tr>
+                            <td>Adgangskode:</td>
+                            <td>**********</td>
+                        </tr>
+                        <tr>
+                            <td>Telefonnummer:</td>
+                            <td>*telefonnummer*</td>
+                        </tr>
+                        <tr>
+                            <td>Adresse:</td>
+                            <td>*address*</td>
+                        </tr>
+                        <tr>
+                            <td>E-mail:</td>
+                            <td>*email*</td>
+                        </tr>
+                        <tr>
+                            <td>Betalingsmåde:</td>
+                            <td>*Mobilepay*<br><br>*Overførsel*<br><br>*Kontant*</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                    <a href="updateProfile.html" style="float: right" class="btn btn-primary">Opdater brugeroplysninger</a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+</div>
+
+<script type="text/javascript" src="../lib/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+
+
+    <!--kilde: http://bootsnipp.com/snippets/featured/simple-user-profile-->
+
+</body>
+</html>
