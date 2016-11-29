@@ -1,10 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Brugtbogsbørs</title>
+
+    <link rel="stylesheet" href="../lib/css/bootstrap.css">
+    <link rel="stylesheet" href="../lib/css/dataTables.bootstrap.min.css">
+
+
 </head>
+
 <body>
+
+<div class="container">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="userView.html">Brugtbogsbørs<span class="sr-only">(current)</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li><a href="userBooks.html">Bøger</a></li>
+                    <li><a href="userAds.html">Annoncer</a></li>
+                    <li><a href="myAds.html">Mine annoncer</a></li>
+                    <li><a href="createAd.html">Opret ny annonce</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="myProfile.html">Min profil</a></li>
+                    <li><a href="logout.html">Log ud</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h2>Opdater bruger</h2>
+
+    <div id="divLoad" class="cssLoad">
+        <div id="divUpdateUser">
+            <form class="form">
+                <div class="form-group form-md">
+                    <div class="form-group">
+                        <label class="control-label">Brugernavn:</label>
+                        <input type="text" class="form-control" style="width: 300px;" id="textUpdateUserUsername">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Adgangskode:</label>
+                        <input type="password" class="form-control" style="width: 300px;" id="textUpdateUserPassword">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">E-mail:</label>
+                        <input type="text" class="form-control" style="width: 300px;" id="textUpdateUserEmail">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Telefonnummer:</label>
+                        <input type="number" class="form-control" style="width: 300px;" id="textUpdateUserPhonenumber">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Adresse:</label>
+                        <input type="text" class="form-control" style="width: 300px;" id="textUpdateUserAddress">
+                    </div>
+                    <strong>Hvilke betalingsformer accepterer du?</strong>
+                    <p></p>
+                    <div class="form-group">
+                        <label class="control-label">Mobilepay:</label>
+                        <input type="checkbox" id="checkboxUpdateUserMobilepay">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Overførsel:</label>
+                        <input type="checkbox" id="checkboxUpdateUserTransfer">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Kontanter:</label>
+                        <input type="checkbox" id="checkboxUpdateUserCash">
+                    </div>
+                    <div class="form-group">
+                        <input type="button" class="btn btn-primary" value="Opdater bruger" id="ButtonUpdateUser">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+<script type="text/javascript" src="../lib/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/updateProfile.js"></script>
+<script type="text/javascript" src="../lib/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../lib/js/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#divLoad").on("click", "#ButtonUpdateUser", function() {
+            updateUser();
+        });
+
+    });
+</script>
 
 </body>
 </html>

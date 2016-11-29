@@ -29,7 +29,7 @@
     }
     
     function deleteBook (row, book) {
-    $.ajax({
+        $.ajax({
             url: "https://localhost:8000/deletebook",
             type: 'POST',
             dataType: "json",
@@ -46,7 +46,7 @@
             error: function(data) {
                 alert(JSON.stringify(data));
             }
-    })
+        })
     }
 
     function getBooks () {

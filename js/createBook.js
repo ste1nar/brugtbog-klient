@@ -18,7 +18,11 @@ function createBook() {
             "isbn": isbn
         }),
 
-        success: function (data) { alert("Book created"); alert(JSON.stringify(data))},
+        success: function (data) {
+            alert("Book created");
+            alert(JSON.stringify(data));
+            window.location.href = "books.html";
+        },
         error: function (data) { alert("Error"); alert(JSON.stringify(data))}
     })
 }

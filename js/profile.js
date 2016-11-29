@@ -1,15 +1,6 @@
 
 function profile(){
 
-    var username = $("#textCreateUserUsername").val();
-    var password = $("#textCreateUserPassword").val();
-    var email = $("#textCreateUserEmail").val();
-    var phonenumber = +$("#textCreateUserPhonenumber").val();
-    var address = $("#textCreateUserAddress").val();
-    var mobilepay = +$("#checkboxCreateUserMobilepay").prop("checked");
-    var transfer = +$("#checkboxCreateUserTransfer").prop("checked");
-    var cash = +$("#checkboxCreateUserCash").prop("checked");
-
     $.ajax({
         url: "https://localhost:8000/getuser",
         type: "json",
@@ -17,11 +8,30 @@ function profile(){
         xhrFields: { withCredentials: true },
 
         success: function (data) {
-
+            console.log(JSON.stringify(data));
         },
 
-        error: function(data) { alert(JSON.stringify(data));}
+        error: function(data) { alert(JSON.stringify(data));},
 
-
+        // Storage: {
+        //     prefix: "BookStoreSDK",
+        //     persist: function (key, value) {
+        //         window.localStorage.setItem(this.prefix + key, (typeof value === 'object') ? JSON.stringify(value) : value)
+        //     },
+        //     load: function (key) {
+        //         var val = window.localStorage.getItem(this.prefix + key);
+        //         try {
+        //             return JSON.parse(val);
+        //         }
+        //         catch (e){
+        //             return val;
+        //         }
+        //     },
+        //     remove:function (key) {
+        //         window.localStorage.removeItem(this.prefix + key);
+        //     }
+        // }
     })
 }
+
+
