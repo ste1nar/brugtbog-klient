@@ -22,6 +22,9 @@ function createAd() {
             alert("Ad created");
             alert(JSON.stringify(data));
             window.location.href = "ads.html";
+        },
+        error: function (data) {
+            alert(JSON.stringify(data));
         }
     })
 }

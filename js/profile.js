@@ -1,4 +1,16 @@
 
+var user = JSON.parse(localStorage.getItem("user"));
+$("#MyProfileUsernameHeader").html(user.username);
+$("#MyProfileUsername").html(user.username);
+$("#MyProfilePassword").html(user.password);
+$("#MyProfilePhonenumber").html(user.phonenumber);
+$("#MyProfileAddress").html(user.address);
+$("#MyProfileEmail").html(user.email);
+
+$("#MyProfileMobilepay").html(user.mobilepay);
+$("#MyProfileTransfer").html(user.transfer);
+$("#MyProfileCash").html(user.cash);
+
 function profile(){
 
     $.ajax({
@@ -8,29 +20,13 @@ function profile(){
         xhrFields: { withCredentials: true },
 
         success: function (data) {
-            console.log(JSON.stringify(data));
+            alert(JSON.stringify(data));
+            //localStorage.clear("user");
+            //localStorage.setItem("user", JSON.stringify(data));
         },
 
-        error: function(data) { alert(JSON.stringify(data));},
-
-        // Storage: {
-        //     prefix: "BookStoreSDK",
-        //     persist: function (key, value) {
-        //         window.localStorage.setItem(this.prefix + key, (typeof value === 'object') ? JSON.stringify(value) : value)
-        //     },
-        //     load: function (key) {
-        //         var val = window.localStorage.getItem(this.prefix + key);
-        //         try {
-        //             return JSON.parse(val);
-        //         }
-        //         catch (e){
-        //             return val;
-        //         }
-        //     },
-        //     remove:function (key) {
-        //         window.localStorage.removeItem(this.prefix + key);
-        //     }
-        // }
+        error: function(data) { alert(JSON.stringify(data));
+        }
     })
 }
 

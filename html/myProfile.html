@@ -46,7 +46,7 @@
 
     <div class="panel panel-info">
         <div class="panel-heading">
-            <h3 class="panel-title">*USERNAME*</h3>
+            <h3 class="panel-title"><span id="MyProfileUsernameHeader"></span></h3>
         </div>
         <div class="panel-body">
             <div class="row">
@@ -57,29 +57,30 @@
                         <tbody>
                         <tr>
                             <td>Brugernavn:</td>
-                            <td>*username*</td>
+                            <td> <span id="MyProfileUsername"></span></td>
                         </tr>
                         <tr>
                             <td>Adgangskode:</td>
-                            <td>**********</td>
+                            <td><span id="MyProfilePassword"></span></td>
                         </tr>
                         <tr>
                             <td>Telefonnummer:</td>
-                            <td>*telefonnummer*</td>
+                            <td><span id="MyProfilePhonenumber"></span></td>
                         </tr>
                         <tr>
                             <td>Adresse:</td>
-                            <td>*address*</td>
+                            <td><span id="MyProfileAddress"></span></td>
                         </tr>
                         <tr>
                             <td>E-mail:</td>
-                            <td>*email*</td>
+                            <td><span id="MyProfileEmail"></span></td>
                         </tr>
                         <tr>
                             <td>Betalingsmåde:</td>
-                            <td>*Mobilepay*<br><br>*Overførsel*<br><br>*Kontant*</td>
+                            <td>Mobilepay: <span id="MyProfileMobilepay"></span><br>
+                                Overførsel: <span id="MyProfileTransfer"></span><br>
+                                Kontanter: <span id="MyProfileCash"></span></td>
                         </tr>
-
                         </tbody>
                     </table>
 
@@ -98,7 +99,7 @@
 
 <script type="text/javascript" src="../lib/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-
+<script type="text/javascript" src="../js/profile.js"></script>
 
     <!--kilde: http://bootsnipp.com/snippets/featured/simple-user-profile-->
 
