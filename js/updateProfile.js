@@ -9,7 +9,7 @@ function updateUser() {
     var cash = +$("#checkboxUpdateUserCash").prop("checked");
     var transfer = +$("#checkboxUpdateUserTransfer").prop("checked");
 
-    $.ajax({
+     $.ajax({
         url: "https://localhost:8000/updateuser",
         type: "POST",
         dataType: "json",
@@ -25,7 +25,10 @@ function updateUser() {
             "transfer" : transfer
         }),
 
-        success: function(data) { alert("Success"); alert(JSON.stringify(data)) },
-        error: function(data) { alert("Failure"); alert(JSON.stringify(data)) }
+        success: function(data) {
+            alert(JSON.stringify(data))},
+
+        error: function(data) {
+            alert("Failure"); alert(JSON.stringify(data)) }
     });
 }
