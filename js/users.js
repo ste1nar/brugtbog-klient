@@ -29,7 +29,6 @@ function getUsers () {
         },
         error: function(data) {
             alert(JSON.stringify(data));
-            alert("Hov! Noget gik galt! :O");
         }
     })
 }

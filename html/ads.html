@@ -47,10 +47,12 @@
         <th>Udgave</th>
         <th>Forfatter(e)</th>
         <th>ISBN</th>
+        <th>Sælger</th>
         <th>Rating</th>
-        <th>Mobilepay</th>
-        <th>Kontant</th>
-        <th>Overførsel</th>
+        <th>Pris</th>
+        <th>Kommentar</th>
+        <th>Låst</th>
+        <th>Reserver</th>
         </thead>
     </table>
 
@@ -66,6 +68,10 @@
 <script type="text/javascript">
     $(document).ready(function() {
         getAds();
+
+        $('#tblAds').on( 'click', 'button', function () {
+            window.location.href = "login.html";
+        } );
     });
 </script>
 

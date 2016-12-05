@@ -2,7 +2,7 @@
 function getAds () {
 
     $.ajax({
-        url:"https://localhost:8000/getads",
+        url:"https://localhost:8000/getmyads",
         method: "GET",
         dataType: "json",
 
@@ -25,29 +25,6 @@ function getAds () {
             });
 
         },
-        error: function(data) {
-            alert(JSON.stringify(data));
-        }
-    })
-}
-
-function reserveAd (ad) {
-
-    $.ajax({
-        url: "https://localhost:8000/reservead",
-        type: 'POST',
-        dataType: "json",
-        xhrFields: {withCredentials: true},
-        data: JSON.stringify({
-            "adId" : ad.adId,
-            "userId" : ad.userId
-        }),
-
-        success: function (data) {
-            alert(JSON.stringify(data));
-            alert("Annonce er reserveret");
-            },
-
         error: function(data) {
             alert(JSON.stringify(data));
         }

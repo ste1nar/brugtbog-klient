@@ -1,10 +1,12 @@
 
 function createAd() {
 
-    var isbn = $("#isbn").val();
-    var rating = $("#rating").val();
-    var comment = $("#comment").val();
-    var price = $("#price").val();
+    console.log(isbn, rating, comment, price);
+
+    var isbn = +$("#textCreateAdIsbn").val();
+    var rating = +$("#textCreateAdRating").val();
+    var comment = $("#textCreateAdComment").val();
+    var price = +$("#textCreateAdPrice").val();
 
     $.ajax({
         url: "https://localhost:8000/createad",

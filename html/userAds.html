@@ -48,12 +48,14 @@
         <thead>
         <th>Titel</th>
         <th>Udgave</th>
-        <th>Forfatter</th>
+        <th>Forfatter(e)</th>
         <th>ISBN</th>
+        <th>Sælger</th>
         <th>Rating</th>
-        <th>Mobilepay</th>
-        <th>Kontant</th>
-        <th>Overførsel</th>
+        <th>Pris</th>
+        <th>Kommentar</th>
+        <th>Låst</th>
+        <th>Reserver</th>
         </thead>
     </table>
 
@@ -70,6 +72,10 @@
     $(document).ready(function() {
         getAds();
 
+        $('#tblAds').on( 'click', 'button', function () {
+            var data = $('#tblBooks').DataTable().row( $(this).parents('tr') ).data();
+            reserveAd(data);
+        } );
     });
 </script>
 

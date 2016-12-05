@@ -1,5 +1,5 @@
-
 var user = JSON.parse(localStorage.getItem("user"));
+
 $("#MyProfileUsernameHeader").html(user.username);
 $("#MyProfileUsername").html(user.username);
 $("#MyProfileUsername1").html(user.username);
@@ -18,7 +18,6 @@ document.getElementById("textUpdateUserEmail").value = user.email;
 document.getElementById("textUpdateUserPhonenumber").value = user.phonenumber;
 document.getElementById("textUpdateUserAddress").value = user.address;
 
-
 document.getElementById("checkboxUpdateUserMobilepay").checked = user.mobilepay;
 document.getElementById("checkboxUpdateUserTransfer").checked = user.transfer;
 document.getElementById("checkboxUpdateUserCash").checked = user.cash;
@@ -33,8 +32,8 @@ function profile(){
 
         success: function (data) {
             alert(JSON.stringify(data));
-            //localStorage.clear("user");
-            //localStorage.setItem("user", JSON.stringify(data));
+            localStorage.setItem("user", JSON.stringify(data));
+            localStorage.clear("user");
         },
 
         error: function(data) { alert(JSON.stringify(data));
