@@ -8,7 +8,7 @@ function getUsers () {
 
         success: function(data) {
 
-            $("#tblUsers").dataTable({
+            $("#tableUsers").dataTable({
                 data: data,
                 processing: true,
                 bDestroy: true,

@@ -44,8 +44,9 @@
 
     <h1>Se alle annoncer</h1>
 
-    <table id="tblAds" class="table table-striped table-bordered table-hover">
+    <table id="tableAds" class="table table-striped table-bordered table-hover">
         <thead>
+        <th>Annonce ID</th>
         <th>Titel</th>
         <th>Udgave</th>
         <th>Forfatter(e)</th>
@@ -53,11 +54,11 @@
         <th>Sælger</th>
         <th>Rating</th>
         <th>Pris</th>
-        <th>Kommentar</th>
         <th>Låst</th>
-        <th>Reserver</th>
         </thead>
     </table>
+
+
 
 
 </div>
@@ -72,10 +73,13 @@
     $(document).ready(function() {
         getAds();
 
-        $('#tblAds').on( 'click', 'button', function () {
-            var data = $('#tblBooks').DataTable().row( $(this).parents('tr') ).data();
-            reserveAd(data);
-        } );
+        $("#tableAds").on("click", "tbody tr", function () {
+            var data = $("#tableAds").DataTable().row( this ).data();
+            getAdSelect(data["adId"]);
+            window.location.href = "ad.html";
+        });
+
+
     });
 </script>
 

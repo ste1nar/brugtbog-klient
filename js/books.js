@@ -8,7 +8,7 @@
 
             success: function(data) {
 
-                $("#tblBooks").dataTable({
+                $("#tableBooks").dataTable({
                    data: data,
                     processing: true,
                     bDestroy: true,
@@ -29,6 +29,9 @@
     }
     
     function deleteBook (row, book) {
+
+    console.log(book.title);
+
         $.ajax({
             url: "https://localhost:8000/deletebook",
             type: 'POST',
@@ -58,7 +61,7 @@
 
             success: function(data) {
 
-                $("#tblBooks").dataTable({
+                $("#tableBooks").dataTable({
                     data: data,
                     processing: true,
                     bDestroy: true,

@@ -8,9 +8,10 @@ function getAds () {
 
         success: function(data) {
 
-            $("#tblAds").dataTable({
+            $("#tableAds").dataTable({
                 data: data,
                 columns: [
+                    { data: "adId" },
                     { data: "bookTitle" },
                     { data: "bookEdition" },
                     { data: "bookAuthor" },
@@ -18,9 +19,7 @@ function getAds () {
                     { data: "userUsername" },
                     { data: "rating" },
                     { data: "price" },
-                    { data: "comment" },
-                    { data: "locked" },
-                    { defaultContent: "<button type='button'>Reserver</button>" }
+                    { data: "locked" }
                 ]
             });
 
@@ -31,7 +30,73 @@ function getAds () {
     })
 }
 
-function reserveAd (ad) {
+function getAd() {
+    var adId = +$("#textGetAdId").val();
+
+    $.ajax({
+        url: "https://localhost:8000/getadpublic",
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify({
+            "id" : adId
+        }),
+
+        success: function(data) {
+            $("#textGetAdId").val(data["adId"]);
+            $("#textGetAdUsername").val(data["userUsername"]);
+            $("#textGetAdISBN").val(data["isbn"]);
+            $("#textGetAdTitle").val(data["bookTitle"]);
+            $("#textGetAdAuthor").val(data["bookAuthor"]);
+            $("#textGetAdEdition").val(data["bookEdition"]);
+            $("#textGetAdMobilepay").val(data["userMobilepay"]);
+            $("#textGetAdCash").val(data["userCash"]);
+            $("#textGetAdTransfer").val(data["userTransfer"]);
+            $("#textGetAdAddress").val(data["userAddress"]);
+            $("#textGetAdComment").val(data["comment"]);
+            $("#textGetAdRating").val(data["rating"]);
+            $("#textGetAdPrice").val(data["price"]);
+
+        },
+
+        error: function(data) { alert("Failure"); alert(JSON.stringify(data)); }
+    });
+}
+
+function getAdSelect(adId) {
+
+    $.ajax({
+        url: "https://localhost:8000/getadpublic",
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify({
+            "id" : adId
+        }),
+
+        success: function(data) {
+            $("#textGetAdId").val(data["adId"]);
+            $("#textGetAdUsername").val(data["userUsername"]);
+            $("#textGetAdISBN").val(data["isbn"]);
+            $("#textGetAdTitle").val(data["bookTitle"]);
+            $("#textGetAdAuthor").val(data["bookAuthor"]);
+            $("#textGetAdEdition").val(data["bookEdition"]);
+            $("#textGetAdMobilepay").val(data["userMobilepay"]);
+            $("#textGetAdCash").val(data["userCash"]);
+            $("#textGetAdTransfer").val(data["userTransfer"]);
+            $("#textGetAdAddress").val(data["userAddress"]);
+            $("#textGetAdComment").val(data["comment"]);
+            $("#textGetAdRating").val(data["rating"]);
+            $("#textGetAdPrice").val(data["price"]);
+
+        },
+
+        error: function(data) { alert("Failure"); alert(JSON.stringify(data)); }
+    });
+}
+
+function reserveAd (adId, userId) {
+
+    adId = +$("#textGetAdId").val();
+    userId = JSON.parse(localStorage.getItem("User"));
 
     $.ajax({
         url: "https://localhost:8000/reservead",
@@ -39,13 +104,11 @@ function reserveAd (ad) {
         dataType: "json",
         xhrFields: {withCredentials: true},
         data: JSON.stringify({
-            "adId" : ad.adId,
-            "userId" : ad.userId
+            "adId" : adId
         }),
 
         success: function (data) {
             alert(JSON.stringify(data));
-            alert("Annonce er reserveret");
             },
 
         error: function(data) {
