@@ -76,7 +76,10 @@
 
         $('#tableAds').on( 'click', 'button', function () {
             var data = $('#tableAds').DataTable().row( $(this).parents('tr') ).data();
-            reserveAd(data);
+            ok = window.confirm("Er du sikker på, at du vil reservere denne bog?");
+            if (ok == true){
+                reserveAd(data);
+            } else {}
         });
     });
 </script>

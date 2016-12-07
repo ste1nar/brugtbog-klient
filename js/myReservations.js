@@ -18,7 +18,7 @@ function getMyReservations(){
                 ]
             });
         },
-        error: function(data) { alert("Failure"); alert(JSON.stringify(data)); }
+        error: function(data) { alert(JSON.stringify(data)); }
     });
 }
 
@@ -35,11 +35,9 @@ function deleteReservation(row, ad){
 
         success: function(data) {
             $('#tableMyReservations').DataTable().row( $(row).parents('tr') ).remove().draw();
-            alert("Success");
             alert(JSON.stringify(data));
             },
         error: function(data) {
-            alert("Failure");
             alert(JSON.stringify(data)) }
     });
 }

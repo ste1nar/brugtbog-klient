@@ -71,7 +71,11 @@
 
         $('#tableMyAds').on( 'click', 'button', function () {
             var data = $('#tableMyAds').DataTable().row( $(this).parents('tr') ).data();
-            deleteAd(this,data);
+            ok = window.confirm("Er du sikker på, at du vil slette annoncen?");
+            if (ok == true){
+                deleteAd(this,data);
+            } else {}
+
         } );
 
     });

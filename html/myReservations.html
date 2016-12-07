@@ -70,7 +70,10 @@
 
     $('#tableMyReservations').on( 'click', 'button', function () {
         var data = $('#tableMyReservations').DataTable().row( $(this).parents('tr') ).data();
-        deleteReservation(this,data);
+        ok = window.confirm("Er du sikker på, at du vil annullere din reservation?");
+        if (ok == true){
+            deleteReservation(this,data);
+        } else {}
     } );
     });
 

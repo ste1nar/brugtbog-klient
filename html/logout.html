@@ -45,7 +45,10 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        logOut();
+        ok = window.confirm("Er du sikker på, at du vil logge ud?");
+        if (ok == true){
+            logOut();
+        } else {}
     });
 </script>
 
