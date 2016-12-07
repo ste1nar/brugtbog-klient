@@ -28,10 +28,11 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                 <ul class="nav navbar-nav">
-                    <li><a href="books.html">Bøger</a></li>
+                    <li><a href="userBooks.html">Bøger</a></li>
                     <li><a href="userAds.html">Annoncer</a></li>
                     <li><a href="myAds.html">Mine annoncer</a></li>
                     <li><a href="createAd.html">Opret ny annonce</a></li>
+                    <li><a href="myReservations.html">Mine reservationer</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="myProfile.html">Min profil</a></li>
@@ -45,15 +46,13 @@
 
     <table id="tableMyAds" class="table table-striped table-bordered table-hover">
         <thead>
-        <th>Titel</th>
-        <th>Udgave</th>
-        <th>Forfatter(e)</th>
-        <th>ISBN</th>
-        <th>Sælger</th>
-        <th>Rating</th>
+        <th>Annonce ID</th>
         <th>Pris</th>
+        <th>Stand</th>
+        <th>ISBN</th>
         <th>Kommentar</th>
         <th>Låst</th>
+        <th>Slet annonce</th>
         </thead>
     </table>
 
@@ -69,6 +68,11 @@
 <script type="text/javascript">
     $(document).ready(function() {
         getMyAds();
+
+        $('#tableMyAds').on( 'click', 'button', function () {
+            var data = $('#tableMyAds').DataTable().row( $(this).parents('tr') ).data();
+            deleteAd(this,data);
+        } );
 
     });
 </script>
