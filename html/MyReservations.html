@@ -43,20 +43,14 @@
         </div>
     </nav>
 
-    <h1>Se alle annoncer</h1>
+    <h1>Mine reservationer</h1>
 
-    <table id="tableAds" class="table table-striped table-bordered table-hover">
+    <table id="tableMyReservations" class="table table-striped table-bordered table-hover">
         <thead>
         <th>Annonce ID</th>
-        <th>Titel</th>
-        <th>Udgave</th>
-        <th>Forfatter(e)</th>
         <th>ISBN</th>
-        <th>Sælger</th>
-        <th>Rating</th>
-        <th>Pris</th>
-        <th>Låst</th>
-        <th>Reserver</th>
+        <th>Reserveret</th>
+        <th>Annuller reservation</th>
         </thead>
     </table>
 
@@ -67,24 +61,21 @@
 
 <script type="text/javascript" src="../lib/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/ads.js"></script>
 <script type="text/javascript" src="../lib/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="../lib/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/myReservations.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
-        getAds();
+        getMyReservations();
 
-        $('#tableAds').on( 'click', 'button', function () {
-            var data = $('#tableAds').DataTable().row( $(this).parents('tr') ).data();
-            reserveAd(this,data);
-        });
+    $('#tableMyReservations').on( 'click', 'button', function () {
+        var data = $('#tableMyReservations').DataTable().row( $(this).parents('tr') ).data();
+        deleteReservation(this,data);
+    } );
     });
+
 </script>
-<!--//        $("#tableAds").on("click", "tbody tr", function () {
-//            var data = $("#tableAds").DataTable().row( this ).data();
-//            getAdSelect(data.adId);
-//            window.location.href = "ad.html";
-//        }); -->
+
 </body>
 </html>

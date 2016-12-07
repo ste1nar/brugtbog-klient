@@ -42,7 +42,7 @@
             }),
 
             success: function (data) {
-                $('#tblBooks').DataTable().row( $(row).parents('tr') ).remove().draw();
+                $('#tableBooks').DataTable().row( $(row).parents('tr') ).remove().draw();
                 alert("Bogen: " + book.title +" med ISBN: "+ book.isbn + " er slettet." );
             },
 

@@ -19,7 +19,8 @@ function getAds () {
                     { data: "userUsername" },
                     { data: "rating" },
                     { data: "price" },
-                    { data: "locked" }
+                    { data: "locked" },
+                    { defaultContent: "<button type='button'>Reserver</button>" }
                 ]
             });
 
@@ -29,6 +30,42 @@ function getAds () {
         }
     })
 }
+
+
+function getMyAds (x, user) {
+
+    $.ajax({
+        url:"https://localhost:8000/getmyads",
+        method: "GET",
+        dataType: "json",
+        data: JSON.stringify({
+            "userId" : user.userId
+    }),
+
+        success: function(data) {
+
+        $("#tableMyAds").dataTable({
+            data: data,
+            columns: [
+                { data: "bookTitle" },
+                { data: "bookEdition" },
+                { data: "bookAuthor" },
+                { data: "isbn" },
+                { data: "userUsername" },
+                { data: "rating" },
+                { data: "price" },
+                { data: "comment" },
+                { data: "locked" }
+            ]
+        });
+
+    },
+    error: function(data) {
+        alert(JSON.stringify(data));
+    }
+})
+}
+
 
 function getAd() {
     var adId = +$("#textGetAdId").val();
@@ -64,6 +101,8 @@ function getAd() {
 
 function getAdSelect(adId) {
 
+    var adId2 = +$("#textAdId").val();
+
     $.ajax({
         url: "https://localhost:8000/getadpublic",
         type: "POST",
@@ -93,10 +132,7 @@ function getAdSelect(adId) {
     });
 }
 
-function reserveAd (adId, userId) {
-
-    adId = +$("#textGetAdId").val();
-    userId = JSON.parse(localStorage.getItem("User"));
+function reserveAd (x, ad) {
 
     $.ajax({
         url: "https://localhost:8000/reservead",
@@ -104,11 +140,12 @@ function reserveAd (adId, userId) {
         dataType: "json",
         xhrFields: {withCredentials: true},
         data: JSON.stringify({
-            "adId" : adId
+            "id" : ad.adId
         }),
 
         success: function (data) {
             alert(JSON.stringify(data));
+            window.location.href = "myReservations.html";
             },
 
         error: function(data) {
@@ -116,3 +153,4 @@ function reserveAd (adId, userId) {
         }
     })
 }
+
