@@ -52,6 +52,7 @@
         <th>Rating</th>
         <th>Pris</th>
         <th>Låst</th>
+        <th>Reserver</th>
         </thead>
     </table>
 
@@ -68,7 +69,7 @@
     $(document).ready(function() {
         getAds();
 
-        $('#tabelAds').on( 'click', 'button', function () {
+        $('#tableAds').on( 'click', 'button', function () {
             window.location.href = "login.html";
         } );
     });

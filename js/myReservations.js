@@ -14,6 +14,8 @@ function getMyReservations(){
                     { data : "adId" },
                     { data : "bookIsbn" },
                     { data : "timestamp" },
+                    { data : "userUsername" },
+                    { data : "userPhonenumber" },
                     { defaultContent: "<button type='button'>Annuller</button>" }
                 ]
             });
