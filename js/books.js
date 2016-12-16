@@ -1,4 +1,5 @@
 
+// getBooksAdmin bliver kaldt fra adminBooks.html og henter alle bøger inkl. mulighed for at slette en bog
     function getBooksAdmin () {
 
         $.ajax({
@@ -28,7 +29,7 @@
         })
     }
 
-
+// createBook bliver kaldt fra createBook.html
     function createBook() {
 
         var title = $("#textCreateBookTitle").val();
@@ -59,8 +60,6 @@
     
     function deleteBook (row, book) {
 
-    console.log(book.title);
-
         $.ajax({
             url: "https://localhost:8000/deletebook",
             type: 'POST',
@@ -81,6 +80,7 @@
         })
     }
 
+    // getBooks bliver kaldt fra books.html og henter alle bøger i en dataTable
     function getBooks () {
 
         $.ajax({

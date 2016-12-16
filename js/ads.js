@@ -1,11 +1,16 @@
 
+// getAds bliver kaldt på ads.html og userAds.html
+
 function getAds () {
 
     $.ajax({
+        <!-- URL til getads -->
         url:"https://localhost:8000/getads",
+        <!-- HTTP requests metode -->
         method: "GET",
         dataType: "json",
 
+        <!-- Ved success bliver en dataTable oprettet men nedenstående kolonner -->
         success: function(data) {
 
             $("#tableAds").dataTable({
@@ -31,7 +36,7 @@ function getAds () {
     })
 }
 
-
+// getMyAds bliver kaldt fra myAds.html
 function getMyAds () {
 
     $.ajax({
@@ -62,7 +67,7 @@ function getMyAds () {
 })
 }
 
-
+// Bliver ikke brugt
 function getAd() {
     var adId = +$("#textGetAdId").val();
 
@@ -95,6 +100,7 @@ function getAd() {
     });
 }
 
+// Bliver kaldt, når knappen reserver knappen trykkes
 function reserveAd (ad) {
 
     $.ajax({
@@ -118,7 +124,7 @@ function reserveAd (ad) {
 
 }
 
-
+// createAd bliver kaldt fra createAd.html
 function createAd() {
 
     var isbn = +$("#textCreateAdIsbn").val();
@@ -149,7 +155,7 @@ function createAd() {
     })
 }
 
-
+// deleteAd bliver kaldt fra MyAds.html når en bruger ønsker at slette sin annonce
 function deleteAd (row, ad) {
 
     $.ajax({
@@ -162,6 +168,7 @@ function deleteAd (row, ad) {
         }),
 
         success: function (data) {
+            // Her fjernes den valgte række
             $('#tableMyAds').DataTable().row( $(row).parents('tr') ).remove().draw();
             alert("Annoncen med ID: "+ ad.adId + " er slettet." );
         },

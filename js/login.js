@@ -1,4 +1,5 @@
 
+// login funktionen
 function login() {
 
     var username = $("#username").val();
@@ -15,18 +16,18 @@ function login() {
             "password" : password
         }),
 
+        // ved success bliver brugerens oplysninger gemt og hentet inde på localstorage
         success: function(data) { alert(JSON.stringify(data));
             localStorage.clear("user");
             localStorage.setItem("user", JSON.stringify(data));
 
             var user = JSON.parse(localStorage.getItem("user"));
-            console.log(user);
-            console.log(user.username);
-            console.log(user.email);
             user.username = $("#currentUserName");
 
+            // Hvis admin (type == 1) vises adminView.html
             if(data.type == 1){
                 window.location.href = "adminView.html";
+                // Hvis bruger vises userView.html
             }else{
                 window.location.href = "userView.html";
             }

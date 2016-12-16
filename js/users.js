@@ -1,3 +1,4 @@
+// getUsers bliver kaldt fra users.html
 function getUsers () {
 
     $.ajax({
@@ -33,7 +34,7 @@ function getUsers () {
     })
 }
 
-
+// createUser funktionen kaldes fra createUser.html
 function createUser() {
 
     var username = $("#textCreateUserUsername").val();
@@ -71,7 +72,7 @@ function createUser() {
 
 }
 
-
+// createUser funktionen kaldes fra createUserAdmin.html
 function createUserAdmin() {
 
     var username = $("#textCreateUserUsername").val();

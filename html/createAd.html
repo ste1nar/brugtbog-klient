@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Opret annonce siden -->
+
 <head>
 
     <meta charset="UTF-8">
@@ -44,6 +47,8 @@
     </nav>
     </div>
 
+
+    <!-- Textbokse til at oprette en annonce -->
     <h2>Opret annonce</h2>
     <div id="divLoad" class="cssLoad">
         <div id="divCreateAd">
@@ -113,6 +118,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        <!-- Knappen ButtonCreateAd kalder funktionen createAd -->
         $("#divLoad").on("click", "#ButtonCreateAd", function() {
             createAd();
         });

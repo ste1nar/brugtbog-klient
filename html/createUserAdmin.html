@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Opret bruger (til admin) -->
+
 <head>
 
     <meta charset="UTF-8">
@@ -43,6 +46,8 @@
     </nav>
     </div>
 
+
+    <!-- Tekstboksene til opret bruger -->
     <div id="divLoad" class="cssLoad">
         <div id="divCreateUser">
             <form class="form">
@@ -129,6 +134,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        <!-- Knappen ButtonCreateUser kalder funktionen createUserAdmin -->
         $("#divLoad").on("click", "#ButtonCreateUser", function() {
             createUserAdmin();
         });

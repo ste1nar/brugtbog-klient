@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Log ud siden -->
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -75,6 +78,8 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        <!-- Tjek om brugeren er sikker på log ud. Hvis ja, kaldes logout funktionen og brugeren bliver sendt til forsiden -->
+        <!-- Hvis brugeren trykker på cancel, bliver brugeren sendt et niveau tilbage -->
         ok = window.confirm("Er du sikker på, at du vil logge ud?");
         if (ok == true){
             logOut();

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Når en bruger har reserveret en annonce, vises denne side, der lister alle brugerens reservationer -->
+
 <head>
 
     <meta charset="UTF-8">
@@ -95,8 +98,11 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        <!-- Funktionkald -->
         getMyReservations();
 
+
+        <!-- Her implementeres annuller knappen på MyReservations knappen -->
     $('#tableMyReservations').on( 'click', 'button', function () {
         var data = $('#tableMyReservations').DataTable().row( $(this).parents('tr') ).data();
         ok = window.confirm("Er du sikker på, at du vil annullere din reservation?");

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Siden, der viser mine annoncer -->
+
 <head>
 
     <meta charset="UTF-8">
@@ -46,6 +49,7 @@
 
     <h2>Se mine annoncer</h2>
 
+    <!-- Tabellen over mine annoncer -->
     <table id="tableMyAds" class="table table-striped table-bordered table-hover">
         <thead>
         <th>Annonce ID</th>
@@ -96,8 +100,10 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        <!-- Funktion kald -->
         getMyAds();
 
+        <!-- Slet annonce knappen inde i tabellen -->
         $('#tableMyAds').on( 'click', 'button', function () {
             var data = $('#tableMyAds').DataTable().row( $(this).parents('tr') ).data();
             ok = window.confirm("Er du sikker på, at du vil slette annoncen?");

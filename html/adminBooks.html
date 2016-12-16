@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Her kan admin liste alle bøger. Admin kan også slette bøger -->
+
 <head>
 
     <meta charset="UTF-8">
@@ -94,8 +97,10 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        <!-- Funktionkald -->
         getBooksAdmin();
 
+        <!-- Slet knappen -->
         $('#tableBooks').on( 'click', 'button', function () {
             var data = $('#tableBooks').DataTable().row( $(this).parents('tr') ).data();
             deleteBook(this,data);

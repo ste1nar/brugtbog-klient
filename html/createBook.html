@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Opret bog siden -->
+
 <head>
 
     <meta charset="UTF-8">
@@ -43,6 +46,8 @@
     </div>
 
     <h2>Opret en ny bog</h2>
+
+    <!-- Tekstboksene til opret bog -->
     <div id="divLoad" class="cssLoad">
         <div id="divCreateUser">
             <form class="form">
@@ -110,6 +115,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        <!-- Knappen ButtonCreateBook kalder funktionen createBook -->
         $("#divLoad").on("click", "#ButtonCreateBook", function() {
             createBook();
         });

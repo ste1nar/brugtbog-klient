@@ -1,5 +1,7 @@
+// brugeroplysninger bliver hentet fra localstorage
 var user = JSON.parse(localStorage.getItem("user"));
 
+// brugeroplysninger gøres tilgængelige for myProfile.html
 $("#MyProfileUsernameHeader").html(user.username);
 $("#MyProfileUsername").html(user.username);
 $("#MyProfilePhonenumber").html(user.phonenumber);
@@ -10,6 +12,7 @@ $("#MyProfileMobilepay").html(user.mobilepay);
 $("#MyProfileTransfer").html(user.transfer);
 $("#MyProfileCash").html(user.cash);
 
+// brugeroplysninger gøres tilgængelige for updateProfile (sættes ind i tekstboksene)
 document.getElementById("textUpdateUserUsername").value = user.username;
 document.getElementById("textUpdateUserEmail").value = user.email;
 document.getElementById("textUpdateUserPhonenumber").value = user.phonenumber;
@@ -18,6 +21,7 @@ document.getElementById("checkboxUpdateUserMobilepay").checked = user.mobilepay;
 document.getElementById("checkboxUpdateUserTransfer").checked = user.transfer;
 document.getElementById("checkboxUpdateUserCash").checked = user.cash;
 
+// profile funktionen bliver kaldt fra myProfile.html
 function profile(){
 
     $.ajax({
@@ -37,6 +41,7 @@ function profile(){
     })
 }
 
+// updateUser kaldes fra updateProfile.html
 function updateUser() {
 
     var username = $("#textUpdateUserUsername").val();
@@ -99,6 +104,7 @@ function getMyReservations(){
     });
 }
 
+// deleteReservation bliver kaldt, når der trykkes på slet-knappen inde på myReservations.html
 function deleteReservation(row, ad){
 
     $.ajax({
